@@ -1,0 +1,49 @@
+#端口号设置为0 会随机分配，测试的时候可以设置成固定的
+server:
+     port: 3232
+info:
+     name: "platform-sys-provider"
+#项目唯一标示名称
+spring:
+  application:
+     name: platform-sys-provider
+#  profiles:
+#     active: dev
+  #eurekaclienta-localprofile.yml
+  profiles:
+    active: localprofile
+
+#  cloud:
+#    config:
+#    #各种版本对应配置文件不一致，新版本如果不配置name属性只会找默认的application.yml或者properties，新版本的需要注意大小写
+#      name : platform-sys-provider
+#      failFast: true
+#      label: master
+#      uri: http://localhost:8888
+#      profile: dev
+   #使用rabbitmq 往turbine发送消息
+  #rabbitmq:
+    #host: localhost
+    #port: 5672
+#    stream:
+#     kafka:
+#       binder:
+#         brokers: 123.56.118.135
+#         zkNodes: 123.56.118.135
+
+#mybatis:
+#  config: classpath:mybatis/mybatis-config.xml
+#   # mappers file
+#  mapperLocations: classpath:mybatis/mapper/*Mapper.xml
+#
+#  typeAliasesPackage: com.juzhouyun.cloud.platform.mapper
+
+
+
+eureka:
+  client:
+      #服务端地址
+    serviceUrl:
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://localhost:8761/eureka/
+
